@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Description Generator</title>
+</head>
+<body>
+<h1>Enter a Movie Title</h1>
+<form action="/generate" method="post">
+    <input type="text" name="title" placeholder="Movie title" required>
+    <button type="submit">Generate Description</button>
+</form>
+
+<h2>Results</h2>
+<ul>
+    <th:block th:each="movie : ${movies}">
+        <li>
+            <strong th:text="${movie.title}"></strong>:
+            <span th:text="${movie.description}"></span>
+        </li>
+    </th:block>
+</ul>
+</body>
+</html>
